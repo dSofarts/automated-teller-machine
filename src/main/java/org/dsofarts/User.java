@@ -64,6 +64,14 @@ public class User {
     }
 
     /**
+     * Get the users firstname
+     * @return
+     */
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    /**
      * Check whether a given pin matches the true User pin
      * @param aPin
      * @return
