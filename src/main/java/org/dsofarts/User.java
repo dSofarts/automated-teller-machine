@@ -55,4 +55,12 @@ public class User {
         this.accounts.add(anAcct);
     }
 
+    /**
+     * Return the user's UUID
+     * @return the uuid
+     */
+    public String getUUID() {
+        return this.uuid;
+    }
+
 }
