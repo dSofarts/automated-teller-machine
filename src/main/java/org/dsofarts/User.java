@@ -45,6 +45,14 @@ public class User {
 
         //print log message
         System.out.printf("New user %s, %s, %s width ID %s created. \n", lastName, middleName, firstName, this.uuid);
-
     }
+
+    /**
+     * Add an account for the user
+     * @param anAcct
+     */
+    public void addAccount(Account anAcct) {
+        this.accounts.add(anAcct);
+    }
+
 }
