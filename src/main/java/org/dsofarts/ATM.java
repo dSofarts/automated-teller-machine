@@ -74,7 +74,31 @@ public class ATM {
         // user menu
         do {
             System.out.printf("Welcome %s, what would you like to do?", theUser.getFirstName());
-            System.out.println("\t1) Show account transaction history\n\t");
+            System.out.println("" +
+                    "\t1) Show account transaction history\n" +
+                    "\t2) Withdrawl\n" +
+                    "\t3) Deposit\n" +
+                    "\t4) Transfer\n" +
+                    "\t5) Quit\n");
+            System.out.print("Enter choice: ");
+            choice = scanner.nextInt();
+            if (choice < 1 || choice > 5) {
+                System.out.println("Invalid choice. Please choose 1-5");
+            }
+        } while (choice < 1 || choice > 5);
+
+        // process the choice
+        switch (choice) {
+            case 1:
+                ATM.showTransHistory(theUser, scanner);
+                break;
+            case 2:
+                ATM.widthdrawlFunds(theUser, scanner);
+                break;
+            case 3:
+                ATM.depositFunds(theUser, scanner);
+            case 4:
+
         }
     }
 }
