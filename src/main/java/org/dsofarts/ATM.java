@@ -97,8 +97,16 @@ public class ATM {
                 break;
             case 3:
                 ATM.depositFunds(theUser, scanner);
+                break;
             case 4:
+                ATM.transferFunds(theUser, scanner);
+                break;
+        }
 
+        // redisplay this menu unless the user wants to quit
+
+        if (choice != 5) {
+            ATM.printUserMenu(theUser, scanner);
         }
     }
 }

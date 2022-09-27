@@ -3,6 +3,7 @@ package org.dsofarts;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.security.MessageDigest;
+import java.util.Scanner;
 
 public class User {
     private String firstName;
@@ -87,6 +88,17 @@ public class User {
             System.exit(1);
         }
         return false;
+    }
+
+    /**
+     * Print summary for the account of the users
+     */
+    public void printAccountsSummary() {
+        System.out.printf("\n\n%s's accounts summary ", this.firstName);
+        for (int a = 0; a < this.accounts.size(); a++) {
+            System.out.printf("%d) %s\n", this.accounts.get(a).getSummaryLine());
+        }
+        System.out.println();
     }
 
 }
