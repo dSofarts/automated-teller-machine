@@ -74,7 +74,7 @@ public class ATM {
         // user menu
         do {
             System.out.printf("Welcome %s, what would you like to do?", theUser.getFirstName());
-            System.out.println("" +
+            System.out.println("\n" +
                     "\t1) Show account transaction history\n" +
                     "\t2) Withdrawl\n" +
                     "\t3) Deposit\n" +
@@ -90,23 +90,44 @@ public class ATM {
         // process the choice
         switch (choice) {
             case 1:
-                ATM.showTransHistory(theUser, scanner);
+                ATM.showTransactionHistory(theUser, scanner);
                 break;
-            case 2:
-                ATM.widthdrawlFunds(theUser, scanner);
-                break;
-            case 3:
-                ATM.depositFunds(theUser, scanner);
-                break;
+//            case 2:
+//                ATM.widthdrawlFunds(theUser, scanner);
+//                break;
+//            case 3:
+//                ATM.depositFunds(theUser, scanner);
+//                break;
             case 4:
                 ATM.transferFunds(theUser, scanner);
                 break;
         }
 
         // redisplay this menu unless the user wants to quit
-
         if (choice != 5) {
             ATM.printUserMenu(theUser, scanner);
         }
+    }
+
+    /**
+     * Show the transaction history for an account
+     * @param theUser
+     * @param scanner
+     */
+    public static void showTransactionHistory(User theUser, Scanner scanner) {
+        int theAcct;
+
+        do {
+            System.out.printf("Enter the number (1-%d) of the account " +
+                    "whose transactions you want to see: ",
+                    theUser.numAccounts());
+            theAcct = scanner.nextInt()-1;
+            if (theAcct < 0 || theAcct >= theUser.numAccounts()) {
+                System.out.println("Invalid account. Please try again");
+            }
+        } while (theAcct < 0 || theAcct >= theUser.numAccounts());
+
+        // print transaction history
+        theUser.printAccountTransactionHistory(theAcct);
     }
 }

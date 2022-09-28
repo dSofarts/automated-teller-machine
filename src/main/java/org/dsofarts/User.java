@@ -94,11 +94,28 @@ public class User {
      * Print summary for the account of the users
      */
     public void printAccountsSummary() {
-        System.out.printf("\n\n%s's accounts summary ", this.firstName);
+        System.out.printf("\n\n%s's accounts summary\n", this.firstName);
         for (int a = 0; a < this.accounts.size(); a++) {
-            System.out.printf("%d) %s\n", this.accounts.get(a).getSummaryLine());
+            System.out.printf("\t%d) %s\n", a + 1, this.accounts.get(a).getSummaryLine());
         }
         System.out.println();
+    }
+
+    /**
+     * Get the number of accounts of the user
+     * @return
+     */
+    public int numAccounts() {
+        return this.accounts.size();
+    }
+
+    /**
+     * Print transaction history for a particular account
+     * @param accountIndex
+     */
+    public void printAccountTransactionHistory(int accountIndex) {
+        this.accounts.get(accountIndex).printTransactionHistory();
+
     }
 
 }

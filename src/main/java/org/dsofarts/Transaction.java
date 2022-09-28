@@ -43,4 +43,17 @@ public class Transaction {
         return this.amount;
     }
 
+    /**
+     * Get a String summarizing the transaction
+     * @return
+     */
+    public String getSummaryLine() {
+
+        if (this.amount >= 0) {
+            return String.format("%s : $%.02f : %s",  this.timestamp.toString(), this.amount, this.memo);
+        } else {
+            return String.format("%s : $(%.02f) : %s",  this.timestamp.toString(), this.amount, this.memo);
+        }
+    }
+
 }
