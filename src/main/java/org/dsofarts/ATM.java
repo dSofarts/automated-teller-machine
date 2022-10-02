@@ -15,9 +15,9 @@ public class ATM {
         User aUser = theBank.addUser("Dmitry", "Vladimirovich", "Komarov", "1224");
 
         // add a checking account for our user
-        Account newAccount = new Account("Checking", aUser, theBank);
-        aUser.addAccount(newAccount);
-        theBank.addAccount(newAccount);
+        Account newAccountA = new Account("Checking", aUser, theBank);
+        aUser.addAccount(newAccountA);
+        theBank.addAccount(newAccountA);
 
         User curUser;
         while (true) {
@@ -100,6 +100,9 @@ public class ATM {
                 break;
             case 4:
                 ATM.transferFunds(theUser, scanner);
+                break;
+            case 5:
+                scanner.nextLine();
                 break;
         }
 
@@ -218,7 +221,8 @@ public class ATM {
         } while (amount < 0 || amount > accountBalance);
 
         // get a memo
-        System.out.println("Enter a memo: ");
+        scanner.nextLine();
+        System.out.print("Enter a memo: ");
         memo = scanner.nextLine();
 
         // do the withdraw
@@ -256,7 +260,8 @@ public class ATM {
         } while (amount < 0);
 
         // get a memo
-        System.out.println("Enter a memo: ");
+        scanner.nextLine();
+        System.out.print("Enter a memo: ");
         memo = scanner.nextLine();
 
         // do the withdraw
