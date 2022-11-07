@@ -37,6 +37,8 @@ To log into your account, you need to enter **your ID** and **PIN code** (Initia
 
 Then follow the instructions in the program. 
 
+---
+
 If you have any questions, please contact by email: [DronovEgorVl@yandex.com](mailto:DronovEgorVl@yandex.com)
 <div id="badges">
   <a href="https://github.com/dSofarts">
